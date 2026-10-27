@@ -912,6 +912,11 @@ impl Global {
         let value = value.to_runtime(store)?;
         store.state.set_global_value(self.0.addr, value)
     }
+
+    /// Get the global's linear-memory address.
+    pub fn addr(&self) -> Addr {
+        self.0.addr
+    }
 }
 
 impl Tag {
